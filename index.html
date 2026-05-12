@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Special For You ❤️</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: monospace;
+    }
+
+    body{
+      background:black;
+      color:#00ff88;
+      height:100vh;
+      overflow:hidden;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .container{
+      text-align:center;
+      animation: fadeIn 2s ease;
+      padding:20px;
+    }
+
+    .loading{
+      font-size:18px;
+      margin-bottom:20px;
+    }
+
+    .heart{
+      font-size:80px;
+      animation: pulse 1s infinite;
+      margin:20px 0;
+    }
+
+    h1{
+      font-size:40px;
+      margin-bottom:10px;
+      color:white;
+    }
+
+    p{
+      color:#cccccc;
+      margin-top:10px;
+      line-height:1.6;
+    }
+
+    button{
+      margin-top:30px;
+      padding:12px 25px;
+      border:none;
+      border-radius:10px;
+      background:#00ff88;
+      color:black;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      transform:scale(1.1);
+      background:white;
+    }
+
+    @keyframes pulse{
+      0%{
+        transform:scale(1);
+      }
+      50%{
+        transform:scale(1.2);
+      }
+      100%{
+        transform:scale(1);
+      }
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+      }
+      to{
+        opacity:1;
+      }
+    }
+
+    .hidden{
+      display:none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div id="loading" class="loading">
+      INITIALIZING LOVE SYSTEM...
+    </div>
+
+    <div id="main" class="hidden">
+
+      <div class="heart">❤️</div>
+
+      <h1>Hai Sayang</h1>
+
+      <p>
+        Dari sekian banyak orang di dunia,<br>
+        aku bersyukur bisa ketemu sama km sy jg mau 
+        ucapkan
+        selamat ulang tahun yaa sayangkuu.<br><br>
+
+        Makasih udah selalu ada ❤️
+      </p>
+
+      <button onclick="showMessage()">
+        Klik Aku
+      </button>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    setTimeout(() => {
+      document.getElementById("loading").classList.add("hidden");
+      document.getElementById("main").classList.remove("hidden");
+    }, 3000);
+
+    function showMessage(){
+      alert("Aku Sayang Kamu ❤️");
+    }
+
+  </script>
+
+</body>
+</html>
