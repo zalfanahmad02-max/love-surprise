@@ -1,144 +1,120 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Special For You ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: monospace;
-    }
+<title>Special For You ❤️</title>
 
-    body{
-      background:black;
-      color:#00ff88;
-      height:100vh;
-      overflow:hidden;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
+<style>
 
-    .container{
-      text-align:center;
-      animation: fadeIn 2s ease;
-      padding:20px;
-    }
+body{
+    margin:0;
+    padding:0;
+    background:black;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:monospace;
+    color:white;
+}
 
-    .loading{
-      font-size:18px;
-      margin-bottom:20px;
-    }
+.container{
+    text-align:center;
+    padding:20px;
+}
 
-    .heart{
-      font-size:80px;
-      animation: pulse 1s infinite;
-      margin:20px 0;
-    }
+img{
+    width:220px;
+    animation: muncul 1s ease;
+    border-radius:20px;
+}
 
-    h1{
-      font-size:40px;
-      margin-bottom:10px;
-      color:white;
-    }
+.text{
+    margin-top:20px;
+    font-size:22px;
+    animation: muncul 1s ease;
+}
 
-    p{
-      color:#cccccc;
-      margin-top:10px;
-      line-height:1.6;
-    }
-
-    button{
-      margin-top:30px;
-      padding:12px 25px;
-      border:none;
-      border-radius:10px;
-      background:#00ff88;
-      color:black;
-      font-size:16px;
-      cursor:pointer;
-      transition:0.3s;
-    }
-
-    button:hover{
-      transform:scale(1.1);
-      background:white;
-    }
-
-    @keyframes pulse{
-      0%{
-        transform:scale(1);
-      }
-      50%{
-        transform:scale(1.2);
-      }
-      100%{
-        transform:scale(1);
-      }
-    }
-
-    @keyframes fadeIn{
-      from{
+@keyframes muncul{
+    from{
         opacity:0;
-      }
-      to{
-        opacity:1;
-      }
+        transform:translateY(30px);
     }
 
-    .hidden{
-      display:none;
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
-  </style>
+}
+
+</style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <div id="loading" class="loading">
-      INITIALIZING LOVE SYSTEM...
+    <img id="stiker" src="love1.png">
+
+    <div class="text" id="kata">
+        Hai cantik ❤️
     </div>
 
-    <div id="main" class="hidden">
+</div>
 
-      <div class="heart">❤️</div>
+<script>
 
-      <h1>Hai Sayang</h1>
+const data = [
 
-      <p>
-        Dari sekian banyak orang di dunia,<br>
-        aku bersyukur bisa ketemu sama km sy jg mau 
-        ucapkan
-        selamat ulang tahun yaa sayangkuu.<br><br>
+{
+    gambar:"love1.png",
+    kata:"Hai sayangku ❤️"
+},
 
-        Makasih udah selalu ada ❤️
-      </p>
+{
+    gambar:"love2.png",
+    kata:"Makasih ya udah hadir di hidup aku 🥺"
+},
 
-      <button onclick="showMessage()">
-        Klik Aku
-      </button>
+{
+    gambar:"love3.png",
+    kata:"Aku bersyukur banget bisa kenal kamu ❤️"
+},
 
-    </div>
+{
+    gambar:"love4.png",
+    kata:"Semoga kita selalu bareng yaa 😭"
+},
 
-  </div>
+{
+    gambar:"love5.png",
+    kata:"I Love You ❤️"
+}
 
-  <script>
+];
 
-    setTimeout(() => {
-      document.getElementById("loading").classList.add("hidden");
-      document.getElementById("main").classList.remove("hidden");
-    }, 3000);
+let index = 0;
 
-    function showMessage(){
-      alert("Aku Sayang Kamu ❤️");
+function nextSlide(){
+
+    index++;
+
+    if(index >= data.length){
+        index = 0;
     }
 
-  </script>
+    document.getElementById("stiker").src = data[index].gambar;
+
+    document.getElementById("kata").innerHTML = data[index].kata;
+
+}
+
+setInterval(nextSlide, 3000);
+
+</script>
 
 </body>
 </html>
