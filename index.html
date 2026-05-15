@@ -13,6 +13,7 @@ body{
     padding:0;
     background:linear-gradient(to bottom, #ff4f81, #ff85a2);
     overflow:hidden;
+    position:relative;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -20,7 +21,7 @@ body{
     font-family:monospace;
     color:white;
 }
-
+    
 .container{
     text-align:center;
     padding:20px;
@@ -189,17 +190,43 @@ setInterval(createHeart, 400);
 
 </script>
 
-<audio id="musik" autoplay loop>  
+<audio id="musik" loop>
     <source src="lagu.mp3" type="audio/mp3">
 </audio>
 
+<button id="playBtn">
+    Klik Aku ❤️
+</button>
+
+<style>
+
+#playBtn{
+    position:fixed;
+    bottom:30px;
+    padding:12px 25px;
+    border:none;
+    border-radius:20px;
+    background:white;
+    color:#ff4f81;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    z-index:9999;
+}
+
+</style>
+
 <script>
 
-document.body.addEventListener("click", function(){
+const musik = document.getElementById("musik");
 
-    document.getElementById("musik").play();
+document.getElementById("playBtn").addEventListener("click", function(){
 
-    document.getElementById("musik").volume = 0.3;
+    musik.play();
+
+    musik.volume = 0.3;
+
+    this.style.display = "none";
 
 });
 
