@@ -62,7 +62,7 @@ img{
     <img id="stiker" src="love1.png">
 
     <div class="text" id="kata">
-        Hai cantik ❤️
+        Hai sayangku ❤️
     </div>
 
 </div>
@@ -142,6 +142,23 @@ function nextSlide(){
 setInterval(nextSlide, 5000);
 
 </script>
+<script>
+
+setInterval(createHeart, 400);
+
+</script>
+
+<audio id="musik" loop>
+    <source src="lagu.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+document.body.addEventListener("click", function(){
+
+    document.getElementById("musik").play();
+
+});
 
 <script>
  
