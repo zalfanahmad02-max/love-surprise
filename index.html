@@ -252,43 +252,40 @@ setInterval(createHeart, 400);
 
 <script>
 
-const intro = document.getElementById("intro");
-const startBtn = document.getElementById("startBtn");
-const musik = document.getElementById("yung%20kai%20-%20blue%20official%20audio.mp3");
+const musik = document.getElementById("musik");
 const playBtn = document.getElementById("playBtn");
+const startBtn = document.getElementById("startBtn");
+const intro = document.getElementById("intro");
 
     
 startBtn.addEventListener("click", async () => {
 
     intro.style.display = "none";
-    
-    yung%20kai%20-%20blue%20official%20audio.mp3.mp3.load();
-    
-    yung%20kai%20-%20blue%20official%20audio.mp3.volume = 0.3;
+
+    musik.load();
+    musik.volume = 0.3;
 
     try {
-        await yung%20kai%20-%20blue%20official%20audio.mp3.play();
+        await musik.play();
         console.log("musik jalan");
     } catch (error) {
         console.log(error);
     }
-
 });
 
 playBtn.addEventListener("click", async () => {
 
-    yung%20kai%20-%20blue%20official%20audio.mp3.volume = 0.3;
+    musik.volume = 0.3;
 
     try {
-        if (yung%20kai%20-%20blue%20official%20audio.mp3.paused) {
-            await yung%20kai%20-%20blue%20official%20audio.mp3 .play();
+        if (musik.paused) {
+            await musik.play();
         } else {
-            yung%20kai%20-%20blue%20official%20audio.mp3.pause();
+            musik.pause();
         }
     } catch (error) {
         console.log(error);
     }
-
 });
 </script>
 
