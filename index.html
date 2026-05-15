@@ -194,21 +194,51 @@ setInterval(createHeart, 400);
     <source src="lagu.mp3" type="audio/mp3">
 </audio>
 
-<button id="playBtn">
-    Klik Aku ❤️
-</button>
+<button id="playBtn">▶ PLAY MUSIC ❤️</button>
+
+<style>
+
+#playBtn{
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#ff4f81;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    z-index:99999;
+    box-shadow:0 0 20px rgba(255,255,255,0.7);
+}
+
+</style>
 
 <script>
 
 const musik = document.getElementById("musik");
+const tombol = document.getElementById("playBtn");
 
-document.getElementById("playBtn").addEventListener("click", function(){
+tombol.addEventListener("click", async () => {
 
-    musik.play();
+    try{
 
-    musik.volume = 0.3;
+        await musik.play();
 
-    this.style.display = "none";
+        musik.volume = 0.3;
+
+        tombol.innerHTML = "❤️ MUSIC PLAYING ❤️";
+
+    }catch(error){
+
+        alert("Musik gagal diputar 😭");
+
+        console.log(error);
+
+    }
 
 });
 
