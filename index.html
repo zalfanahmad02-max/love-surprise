@@ -203,6 +203,10 @@ function nextSlide(){
         index = 0;
     }
 
+    document.getElementById("stiker").src = data[0].gambar;
+    
+    document.getElementById("kata").innerHTML = data[0].kata;
+    
     document.getElementById("stiker").src = data[index].gambar;
 
     document.getElementById("kata").innerHTML = data[index].kata;
