@@ -252,12 +252,12 @@ setInterval(createHeart, 400);
 
 <script>
 
-const musik = document.getElementById("ID3");
+const musik = document.getElementById("musik");
 const playBtn = document.getElementById("playBtn");
 const startBtn = document.getElementById("startBtn");
 const intro = document.getElementById("intro");
 
-    
+// START BUTTON
 startBtn.addEventListener("click", async () => {
 
     intro.style.display = "none";
@@ -273,6 +273,7 @@ startBtn.addEventListener("click", async () => {
     }
 });
 
+// PLAY BUTTON
 playBtn.addEventListener("click", async () => {
 
     musik.volume = 0.3;
