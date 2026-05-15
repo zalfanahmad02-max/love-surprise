@@ -244,45 +244,42 @@ setInterval(createHeart, 400);
 
 </script>
 
-<audio id="" loop>
-  <source src="ID3" type="audio/mpeg">
+<audio id="bgm" loop>
+  <source src="bgm.mp3" type="audio/mpeg">
 </audio>
 
 <button id="playBtn">▶ PLAY MUSIC ❤️</button>
 
 <script>
 
-const musik = document.getElementById("ID3");
+const musik = document.getElementById("bgm");
 const playBtn = document.getElementById("playBtn");
 const startBtn = document.getElementById("startBtn");
 const intro = document.getElementById("intro");
 
 // START BUTTON
 startBtn.addEventListener("click", async () => {
-
     intro.style.display = "none";
 
-    ID3.load();
-    ID3.volume = 0.3;
+    musik.load();
+    musik.volume = 0.3;
 
     try {
-        await ID3.play();
-        console.log("ID3 jalan");
+        await musik.play();
     } catch (error) {
         console.log(error);
     }
 });
 
-// PLAY BUTTON
+// PLAY / PAUSE BUTTON
 playBtn.addEventListener("click", async () => {
-
-    ID3.volume = 0.3;
+    musik.volume = 0.3;
 
     try {
-        if (ID3.paused) {
-            await ID3.play();
+        if (musik.paused) {
+            await musik.play();
         } else {
-            ID3.pause();
+            musik.pause();
         }
     } catch (error) {
         console.log(error);
