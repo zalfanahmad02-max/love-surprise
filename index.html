@@ -191,3 +191,34 @@ setInterval(nextSlide, 5000);
 
 </body>
 </html>
+<script>
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.innerHTML = "❤️";
+
+    heart.style.position = "fixed";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.top = "-20px";
+
+    heart.style.fontSize = (20 + Math.random() * 30) + "px";
+
+    heart.style.animation = "jatuh 5s linear";
+
+    heart.style.zIndex = "999";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+
+}
+
+setInterval(createHeart, 300);
+
+</script>
