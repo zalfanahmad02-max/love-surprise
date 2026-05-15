@@ -83,10 +83,47 @@ img{
     box-shadow:0 0 20px rgba(255,255,255,0.7);
 } 
     
+#intro{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(to bottom, #ff4f81, #ff85a2);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+}
+
+.intro-box{
+    text-align:center;
+    color:white;
+}
+
+#startBtn{
+    margin-top:20px;
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    background:white;
+    color:#ff4f81;
+}
+    
 </style>
 </head>
 
 <body>
+
+<div id="intro">
+    <div class="intro-box">
+        <h1>❤️ Special For You ❤️</h1>
+        <button id="startBtn">▶ START</button>
+    </div>
+</div>
 
 <div class="container">
 
