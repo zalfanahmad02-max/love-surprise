@@ -144,28 +144,6 @@ setInterval(nextSlide, 5000);
 </script>
 <script>
 
-setInterval(createHeart, 400);
-
-</script>
-
-<audio id="musik" loop>
-    <source src="lagu.mp3" type="audio/mp3">
-</audio>
-
-<script>
-
-document.body.addEventListener("click", function(){
-
-    document.getElementById("musik").play();
-
-});
-
-<script>
- 
-</body>
-</html>
-
-
 function createHeart(){
 
     const heart = document.createElement("div");
@@ -179,7 +157,7 @@ function createHeart(){
     heart.style.top = "-50px";
 
     heart.style.fontSize = (20 + Math.random() * 30) + "px";
-    
+
     heart.style.animation = "jatuh 6s linear forwards";
 
     heart.style.pointerEvents = "none";
@@ -196,5 +174,21 @@ function createHeart(){
 
 setInterval(createHeart, 400);
 
+</script>
+
+<audio id="musik" loop>
+    <source src="lagu.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+document.body.addEventListener("click", function(){
+
+    document.getElementById("musik").play();
+
+});
 
 </script>
+
+</body>
+</html>
