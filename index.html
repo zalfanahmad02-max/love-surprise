@@ -195,24 +195,23 @@ const data = [
 
 let index = 0;
 
-function nextSlide(){
-
-    index++;
-
-    if(index >= data.length){
-        index = 0;
-    }
-
-    document.getElementById("stiker").src = data[index].gambar;
-    document.getElementById("kata").innerHTML = data[index].kata;
+function showSlide(i) {
+    document.getElementById("stiker").src = data[i].gambar;
+    document.getElementById("kata").innerHTML = data[i].kata;
 }
 
-// INIT AWAL
-document.getElementById("stiker").src = data[0].gambar;
-document.getElementById("kata").innerHTML = data[0].kata;
+function nextSlide(){
+    index = (index + 1) % data.length;
+    showSlide(index);
+}
 
-setInterval(nextSlide, 5000);
+// INIT
+showSlide(0);
 
+// START AFTER PAGE READY
+window.onload = function () {
+    setInterval(nextSlide, 5000);
+};
 
 </script>
 <script>
