@@ -261,7 +261,9 @@ const playBtn = document.getElementById("playBtn");
 startBtn.addEventListener("click", async () => {
 
     intro.style.display = "none";
-
+    
+    musik.load();
+    
     musik.volume = 0.3;
 
     try {
