@@ -220,20 +220,21 @@ const tombol = document.getElementById("playBtn");
 
 tombol.addEventListener("click", async () => {
 
-    try{
+    musik.volume = 0.3;
 
-        await musik.play();
+    try {
+        musik.currentTime = 0;
+        const playPromise = musik.play();
 
-        musik.volume = 0.3;
+        if (playPromise !== undefined) {
+            await playPromise;
+        }
 
         tombol.innerHTML = "❤️ MUSIC PLAYING ❤️";
 
-    }catch(error){
-
+    } catch (error) {
+        console.log("ERROR PLAY AUDIO:", error);
         alert("Musik gagal diputar 😭");
-
-        console.log(error);
-
     }
 
 });
