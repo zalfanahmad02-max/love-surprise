@@ -203,17 +203,17 @@ function nextSlide(){
         index = 0;
     }
 
-    document.getElementById("stiker").src = data[0].gambar;
-    
-    document.getElementById("kata").innerHTML = data[0].kata;
-    
     document.getElementById("stiker").src = data[index].gambar;
-
     document.getElementById("kata").innerHTML = data[index].kata;
-
 }
 
+// INIT AWAL
+document.getElementById("stiker").src = data[0].gambar;
+document.getElementById("kata").innerHTML = data[0].kata;
+
 setInterval(nextSlide, 5000);
+
+}
 
 </script>
 <script>
