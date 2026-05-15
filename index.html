@@ -200,18 +200,16 @@ function showSlide(i) {
     document.getElementById("kata").innerHTML = data[i].kata;
 }
 
-function nextSlide(){
+function nextSlide() {
     index = (index + 1) % data.length;
     showSlide(index);
 }
 
-// INIT
+// jalankan pertama kali
 showSlide(0);
 
-// START AFTER PAGE READY
-window.onload = function () {
-    setInterval(nextSlide, 5000);
-};
+// mulai slideshow
+setInterval(nextSlide, 5000);
 
 </script>
 <script>
