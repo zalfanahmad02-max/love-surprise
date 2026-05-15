@@ -265,29 +265,29 @@ startBtn.addEventListener("click", async () => {
     musik.volume = 0.3;
 
     try {
-        musik.currentTime = 0;
         await musik.play();
         console.log("musik jalan");
     } catch (error) {
-        console.log("ERROR PLAY AUDIO:", error);
+        console.log(error);
     }
 
 });
-
 // PLAY BUTTON (optional)
 playBtn.addEventListener("click", async () => {
 
     musik.volume = 0.3;
 
     try {
-        musik.currentTime = 0;
-        await musik.play();
+        if (musik.paused) {
+            await musik.play();
+        } else {
+            musik.pause();
+        }
     } catch (error) {
         console.log(error);
     }
 
 });
-
 </script>
 
 </body>
