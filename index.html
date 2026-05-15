@@ -256,8 +256,8 @@ const intro = document.getElementById("intro");
 const startBtn = document.getElementById("startBtn");
 const musik = document.getElementById("musik");
 const playBtn = document.getElementById("playBtn");
-playBtn.addEventListener("click", async () => {
-    
+
+// START BUTTON
 startBtn.addEventListener("click", async () => {
 
     intro.style.display = "none";
@@ -267,9 +267,23 @@ startBtn.addEventListener("click", async () => {
     try {
         musik.currentTime = 0;
         await musik.play();
-
         console.log("musik jalan");
+    } catch (error) {
+        console.log("ERROR PLAY AUDIO:", error);
+    }
 
+});
+
+// PLAY BUTTON (optional)
+playBtn.addEventListener("click", async () => {
+
+    musik.volume = 0.3;
+
+    try {
+        musik.currentTime = 0;
+        await musik.play();
+    } catch (error) {
+        console.log(error);
     }
 
 });
