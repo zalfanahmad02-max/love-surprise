@@ -252,7 +252,7 @@ setInterval(createHeart, 400);
 
 <script>
 
-const musik = document.getElementById("musik");
+const musik = document.getElementById("ID3");
 const playBtn = document.getElementById("playBtn");
 const startBtn = document.getElementById("startBtn");
 const intro = document.getElementById("intro");
@@ -262,12 +262,12 @@ startBtn.addEventListener("click", async () => {
 
     intro.style.display = "none";
 
-    musik.load();
-    musik.volume = 0.3;
+    ID3.load();
+    ID3.volume = 0.3;
 
     try {
-        await musik.play();
-        console.log("musik jalan");
+        await ID3.play();
+        console.log("ID3 jalan");
     } catch (error) {
         console.log(error);
     }
@@ -276,13 +276,13 @@ startBtn.addEventListener("click", async () => {
 // PLAY BUTTON
 playBtn.addEventListener("click", async () => {
 
-    musik.volume = 0.3;
+    ID3.volume = 0.3;
 
     try {
-        if (musik.paused) {
-            await musik.play();
+        if (ID3.paused) {
+            await ID3.play();
         } else {
-            musik.pause();
+            ID3.pause();
         }
     } catch (error) {
         console.log(error);
