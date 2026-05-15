@@ -252,20 +252,18 @@ setInterval(createHeart, 400);
 
 <script>
 
-const musik = document.getElementById("musik");
-const tombol = document.getElementById("playBtn");
+const intro = document.getElementById("intro");
+const startBtn = document.getElementById("startBtn");
 
-tombol.addEventListener("click", async () => {
+startBtn.addEventListener("click", async () => {
+
+    intro.style.display = "none"; // tutup intro
 
     musik.volume = 0.3;
 
     try {
         musik.currentTime = 0;
-        const playPromise = musik.play();
-
-        if (playPromise !== undefined) {
-            await playPromise;
-        }
+        await musik.play();
 
         tombol.innerHTML = "❤️ MUSIC PLAYING ❤️";
 
