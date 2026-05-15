@@ -271,20 +271,22 @@ startBtn.addEventListener("click", async () => {
     }
 });
 
-// PLAY / PAUSE BUTTON
-playBtn.addEventListener("click", async () => {
-    musik.volume = 0.3;
+// PLAY BUTTON (SAFE CHECK)
+if (playBtn) {
+    playBtn.addEventListener("click", async () => {
+        musik.volume = 0.3;
 
-    try {
-        if (musik.paused) {
-            await musik.play();
-        } else {
-            musik.pause();
+        try {
+            if (musik.paused) {
+                await musik.play();
+            } else {
+                musik.pause();
+            }
+        } catch (error) {
+            console.log(error);
         }
-    } catch (error) {
-        console.log(error);
-    }
-});
+    });
+}
    
 </script>
 
