@@ -244,8 +244,8 @@ setInterval(createHeart, 400);
 
 </script>
 
-<audio id="yung kai - blue official audio.mp3" loop>
-  <source src="yung kai - blue official audio.mp3" type="audio/mpeg">
+<audio id="yung%20kai%20-%20blue%20official%20audio.mp3" loop>
+  <source src="yung%20kai%20-%20blue%20official%20audio.mp3" type="audio/mpeg">
 </audio>
 
 <button id="playBtn">▶ PLAY MUSIC ❤️</button>
@@ -254,7 +254,7 @@ setInterval(createHeart, 400);
 
 const intro = document.getElementById("intro");
 const startBtn = document.getElementById("startBtn");
-const musik = document.getElementById("musik");
+const musik = document.getElementById("yung%20kai%20-%20blue%20official%20audio.mp3");
 const playBtn = document.getElementById("playBtn");
 
     
@@ -262,12 +262,12 @@ startBtn.addEventListener("click", async () => {
 
     intro.style.display = "none";
     
-    yung kai - blue official audio.mp3.load();
+    yung%20kai%20-%20blue%20official%20audio.mp3.mp3.load();
     
-    yung kai - blue official audio.mp3.volume = 0.3;
+    yung%20kai%20-%20blue%20official%20audio.mp3.volume = 0.3;
 
     try {
-        await yung kai - blue official audio.mp3.play();
+        await yung%20kai%20-%20blue%20official%20audio.mp3.play();
         console.log("musik jalan");
     } catch (error) {
         console.log(error);
@@ -277,13 +277,13 @@ startBtn.addEventListener("click", async () => {
 
 playBtn.addEventListener("click", async () => {
 
-    yung kai - blue official audio.mp3.volume = 0.3;
+    yung%20kai%20-%20blue%20official%20audio.mp3.volume = 0.3;
 
     try {
-        if (yung kai - blue official audio.mp3.paused) {
-            await yung kai - blue official audio.mp3.play();
+        if (yung%20kai%20-%20blue%20official%20audio.mp3.paused) {
+            await yung%20kai%20-%20blue%20official%20audio.mp3 .play();
         } else {
-            yung kai - blue official audio.mp3.pause();
+            yung%20kai%20-%20blue%20official%20audio.mp3.pause();
         }
     } catch (error) {
         console.log(error);
