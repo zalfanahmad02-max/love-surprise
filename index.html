@@ -244,7 +244,7 @@ setInterval(createHeart, 400);
 
 </script>
 
-<audio id="musik" loop>
+<audio id="yung kai - blue official audio.mp3" loop>
   <source src="yung kai - blue official audio.mp3" type="audio/mpeg">
 </audio>
 
@@ -262,12 +262,12 @@ startBtn.addEventListener("click", async () => {
 
     intro.style.display = "none";
     
-    musik.load();
+    yung kai - blue official audio.mp3.load();
     
-    musik.volume = 0.3;
+    yung kai - blue official audio.mp3.volume = 0.3;
 
     try {
-        await musik.play();
+        await yung kai - blue official audio.mp3.play();
         console.log("musik jalan");
     } catch (error) {
         console.log(error);
@@ -277,13 +277,13 @@ startBtn.addEventListener("click", async () => {
 // PLAY BUTTON (optional)
 playBtn.addEventListener("click", async () => {
 
-    musik.volume = 0.3;
+    yung kai - blue official audio.mp3.volume = 0.3;
 
     try {
-        if (musik.paused) {
-            await musik.play();
+        if (yung kai - blue official audio.mp3.paused) {
+            await yung kai - blue official audio.mp3.play();
         } else {
-            musik.pause();
+            yung kai - blue official audio.mp3.pause();
         }
     } catch (error) {
         console.log(error);
